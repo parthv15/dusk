@@ -1,7 +1,7 @@
 import { createServer } from "node:http";
 import express from "express";
 import { Server } from "socket.io";
-import { registerRoomHandlers } from "./handlers/room.js";
+import { registerRoomHandlers } from "./handlers/room";
 
 const app = express();
 const httpServer = createServer(app);

@@ -9,7 +9,7 @@ import {
   refreshTTL,
   removeParticipant,
   roomExists,
-} from "../lib/rooms.js";
+} from "../lib/rooms";
 
 type JoinPayload = { roomId: string };
 

@@ -1,4 +1,4 @@
-import redis from "./redis.js";
+import redis from "./redis";
 
 const ROOM_TTL_SECONDS = 60 * 60 * 4; // 4 hours
 const ROOM_KEY = (roomId: string) => `room:${roomId}`;
