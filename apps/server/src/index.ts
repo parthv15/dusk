@@ -1,6 +1,7 @@
 import { createServer } from "node:http";
 import express from "express";
 import { Server } from "socket.io";
+import { registerRoomHandlers } from "./handlers/room.js";
 
 const app = express();
 const httpServer = createServer(app);
@@ -18,6 +19,8 @@ app.get("/health", (_req, res) => {
 
 io.on("connection", (socket) => {
   console.log(`socket connected: ${socket.id}`);
+
+  registerRoomHandlers(io, socket);
 
   socket.on("disconnect", (reason) => {
     console.log(`socket disconnected: ${socket.id} - ${reason}`);
